@@ -1,38 +1,123 @@
-.App {
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+.logo img{
+  height: 100px;
+  width: 70px;
   text-align: center;
+  align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.side {
+  width: 250px;
+  background-color: #2d5aaf;
+  color: white;
+  padding: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logo {
+  font-size: 30px;
+  margin-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.side ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side ul li {
+  margin-bottom: 15px;
+  font-size: 18px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 1px;
+}
+
+.side ul li svg {
+  margin-right: 10px;
+}
+
+.main {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.header {
+  font-size: 24px;
+  margin-bottom: 20px;
+  background-color: #2d5aaf;
+  padding: 20px;
+}
+
+.status-bar {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.status-card {
+  flex-grow: 1;
+  background-color: #ccc;
+  padding: 20px;
+  margin-right: 10px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.status-card.red {
+  background-color: #e74c3c;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.status-card.purple {
+  background-color: #9b59b6;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.status-card.green {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.menu-item {
+  color: black;
+  padding: 20px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  /* transition: background-color 0.3s ease; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-item svg {
+  margin-bottom: 10px;
+}
+
+.menu-item:hover {
+  font-size: 20px;
+}
+.icon{
+  font-size: 30px;
+}
+.logo{
+ margin-left:80PX;
+ width:150px;
 }
