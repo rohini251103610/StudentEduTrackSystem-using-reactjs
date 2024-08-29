@@ -1,52 +1,118 @@
-
-import React from 'react';
+import React,{useState} from 'react';
+import ReactDOM from 'react-dom';
 import './App.css';
-import { FaUser, FaBook, FaUsers, FaEnvelope, FaHospital,FaClipboard, FaUserTie, FaCheckCircle } from 'react-icons/fa';
-import { RiDiscountPercentFill } from 'react-icons/ri';
-import logo from './images/logo.jpeg'
-import { BsFileEarmarkBarGraphFill } from "react-icons/bs";
+import Logo from './images/logo.jpeg';
+import { FaUserFriends } from "react-icons/fa";
+import { IoSettingsSharp } from "react-icons/io5";
+import { FaWindowMaximize } from "react-icons/fa";
+import { BsFillGrid1X2Fill } from "react-icons/bs";
+import { FaFile } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
+import { FaUserTie } from "react-icons/fa";
+import { FaPerson } from "react-icons/fa6";
+import { FaBook } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
+import { FaBookOpenReader } from "react-icons/fa6";
+import { FaRegHospital } from "react-icons/fa";
+import { BsQuestionCircleFill } from "react-icons/bs";
+import { IoSettingsOutline } from "react-icons/io5";
+import { BsBoxArrowInRight } from "react-icons/bs";
 
-import './App.css';
+function Student() {
+    const [count, setCount] = useState(8);
+    const [count1, setCount1] = useState(13);
+    const [count2, setCount2] = useState(0);
 
-function App() {
-  return (
-    <div className="container">
-      <div className="side">
-        <div className="logo"><img src={logo}></img></div>
-        <ul>
-          <li><div className="icon"><FaUsers /></div></li>
-          <li> Student Management</li>
-          <li><div className="icon"><FaBook /></div></li>
-          <li>Financial Management</li>
-          <li><div className="icon"><RiDiscountPercentFill /></div></li>
-          <li>Quality Control</li>
-          <li ><div className="icon"><FaEnvelope /></div></li>
-          <li> Report Delivery</li>
-          <li><div className="icon"><BsFileEarmarkBarGraphFill /></div></li>
-          <li>Attendance</li>
-        </ul>
-      </div>
+  return(
+    <div className='container'>
+      <div className='left'>
+        <img src={Logo} alt="" className='logo'/>
+        <div className='icon'><FaUserFriends /></div>
+        <p>Student Management</p>
+        <div className='icon'><FaWindowMaximize /></div>
+        <p>Financial Management</p>
+        <div className='icon'><IoSettingsSharp /></div>
+        <p>Quality Control</p>
+        <div className='icon'><BsFillGrid1X2Fill /></div>
+        <p>Report Delivery</p>
+        <div className='icon'><FaFile /></div>
+        <p>Attendance</p>
+        <div className='footer'>
+          <div><BsQuestionCircleFill /></div> 
+          <div><IoSettingsOutline /></div> 
+          <div><BsBoxArrowInRight /></div> 
+        </div>
+      </div> 
 
-      <div className="main">
-        <header className="header">Student Management</header>
-        <div className="status-bar">
-          <div className="status-card red"><div className="icon"><FaUser /></div> <br />8<br />Regular Students</div>
-          <div className="status-card purple"><div className="icon"><FaUserTie /></div> <br />13<br />Remedial Students</div>
-          <div className="status-card green"><div className="icon"><FaCheckCircle /></div> <br />00<br />In Paid Clubs</div>
+      <div className='right'>
+        <div className='head'>
+          <h2>Student Management</h2>
+        </div>
+        <div className='header'>
+        <div className='header1'>
+          <div className='right-left icon1'><FaUser /></div>
+          <button className='btn1' onClick={() => setCount(prev => prev + 1)}>
+            <div className='right-right'><span>{count}</span><br />Regular Student</div>
+           </button>
+        </div>
+        <div className='header2'>
+          <div className='right-left icon1'><FaUserTie /></div>
+          <button className='btn2' onClick={() => setCount1(prev => prev + 1)}>
+              <div className='right-right'><span>{count1}</span><br />Remedial Student</div>
+           </button>
+        </div>
+        <div className='header3'>
+          <div className='right-left icon1'><FaPerson /></div>
+          <button className='btn3' onClick={() => setCount2(prev => prev + 1)}>
+            <div className='right-right'><span>{count2}</span><br />In Paid Clubs</div>
+          </button>
+        </div>
         </div>
 
-        <div className="menu">
-          <div className="menu-item"><FaUser /> Regular Enrollment</div>
-          <div className="menu-item"><FaBook /> Remedial Enrollment</div>
-          <div className="menu-item"><FaUsers /> Club Management</div>
-          <div className="menu-item"><FaClipboard /> Classroom Management</div>
-          <div className="menu-item"><FaEnvelope /> SMS / EMAIL</div>
-          <div className="menu-item"><BsFileEarmarkBarGraphFill />Attendance</div>
-          <div className="menu-item"><FaHospital /> Clinic</div>
+        <div>
+          <h3 className='menu'>Menu</h3>
+        </div>
+
+        <div className='header-1'>
+        <div className='head1'>
+          <div className='icon2'><FaUser /></div><br/>
+          <div className='name'>Regular Enrollement</div>
+        </div>
+        <div className='head2'>
+          <div className='icon2'><FaBook /></div><br/>
+          <div className='name'>Remedial Enrollement</div>
+        </div>
+        <div className='head3'>
+          <div className='icon2'><FaPerson /></div><br/>
+          <div className='name'>Club Management</div>
+        </div>
+        </div>
+
+        <div className='header-1'>
+        <div className='head1'>
+          <div className='icon2'><FaBookOpenReader /></div><br/>
+          <div className='name'>Classroom Management</div>
+        </div>
+        <div className='head2'>
+          <div className='icon2'><MdEmail /></div><br/>
+          <div className='name'>SMS/EMAIL</div>
+        </div>
+        <div className='head3'>
+          <div className='icon2'><FaFile /></div><br/>
+          <div className='name'>Attendance</div>
+        </div>
+        </div>
+
+        <div className='header-1'>
+        <div className='head4'>
+          <div className='icon2'><FaRegHospital /></div><br/>
+          <div className='name'>Clinic</div>
+        </div>
         </div>
       </div>
+
     </div>
-  );
+  )
 }
 
-export default App;
+export default Student;
